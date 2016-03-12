@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Draggable - Revert position</title>
+  <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.css">
+  <script src="js/jquery.js"></script>
+  <script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+  <style>
+  #draggable, #draggable2 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 0 10px 10px 0; border:1px solid black;}
+  </style>
+  <script>
+	$.noConflict();
+  jQuery( document ).ready(function( $ ) {
+    $( "#draggable" ).draggable();
+    $( "#draggable2" ).draggable({helper: "clone" });
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="draggable" class="ui-widget-content">
+  <p>Revert the original</p>
+</div>
+ 
+<div id="draggable2" class="ui-widget-content">
+  <p>Revert the helper</p>
+</div>
+
+
+<div style="height: 300px; width: 300px">
+<div id="temp1" style="position: relative; top: 50%">Test top</div>
+<div id="temp2" style="position: relative; right: 25%">Test right</div>
+<div id="temp3" style="position: relative; bottom: 75%">Test bottom</div>
+<div id="temp4" style="position: relative; left: 100%">Test left</div>
+</div>
+ 
+ 
+</body>
+</html>
