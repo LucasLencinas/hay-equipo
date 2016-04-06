@@ -49,10 +49,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a data-toggle="modal" data-target="#modalSignup">Sign Up</a>
+                        <a class="pointable" data-toggle="modal" data-target="#modalSignup">Sign Up</a>
                     </li>
                     <li>
-                        <a data-toggle="modal" data-target="#modalLogin">Log In</a>
+                        <a class="pointable" data-toggle="modal" data-target="#modalLogin">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -239,7 +239,7 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="well">
-                            <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                            <div id="loginForm" method="POST" action="/login/" novalidate="novalidate">
                                 <div class="form-group">
                                     <label for="username" class="control-label">Mail or Username</label>
                                     <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter your mail or username" placeholder="example@gmail.com">
@@ -252,7 +252,7 @@
                                 </div>
                                 <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
                                 <button type="submit" class="btn btn-success btn-block">Login</button>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xs-6">
@@ -284,7 +284,7 @@
               <div class="row">
                   <div class="col-xs-12">
                       <div class="well">
-                          <form class="" id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                          <div class="" id="signupForm" novalidate="novalidate">
                               <div class="form-group">
                                   <label for="username" class="control-label">Usuario</label>
                                   <input type="text" class="form-control" id="usernameSignup" name="username" value="" required="" >
@@ -312,7 +312,7 @@
                               </div>
                               <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
                               <button type="submit" class="btn btn-success btn-block">Login</button>
-                          </form>
+                          </div>
                       </div>
                   </div>
               </div>
@@ -325,6 +325,12 @@
 $("#registrarDesdeLogin").click(function(){
   $("#modalLogin").modal("toggle");
 });
+
+$("#signupForm button").click(function(){
+    $("#modalSignup").modal("toggle");
+    location.href = "posiciones.html";
+    
+})
 
 </script>
 

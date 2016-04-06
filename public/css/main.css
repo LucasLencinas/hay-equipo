@@ -225,3 +225,13 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+/*
+COminezo de lo mio
+*/
+
+#left-menu a {
+    cursor: pointer;
+}
+
+
