@@ -1,35 +1,50 @@
 
+/*global $*/
+/*global jugadores*/
+		
+		
+var mapDivsAndFunctions = [];
+mapDivsAndFunctions['partidos-div.html'] = {loadFunction: cargarJugadores, id: 1}
+
+			
+$("#left-menu a").click(function(e){
+  $(".container-fluid").load(e.target.getAttribute("data-div"), function(){
+  	mapDivsAndFunctions[e.target.getAttribute("data-div")].loadFunction();
+  });
+  /*Tengo que testear esto. No se si la funcion loadFunction va a funcionar*/
+});
+
 function cargarJugadores() {
 
-  	jugadores.forEach(function(jugador, index, array) {
-  		var habilidadMaxima = habilidadDeJugador(jugador);
-  		$(".noJuegan").append("<li class=\"ui-state-highlight\"><span>" + jugador.nombre + "</span><span style=\"float: right;\">" + habilidadMaxima + "</span></li>");
-  	});
+	jugadores.forEach(function(jugador, index, array) {
+		var habilidadMaxima = habilidadDeJugador(jugador);
+		$(".noJuegan").append("<li class=\"ui-state-highlight\"><span>" + jugador.nombre + "</span><span style=\"float: right;\">" + habilidadMaxima + "</span></li>");
+	});
 
-    $( ".ui-widget-content" ).draggable();
+  $( ".ui-widget-content" ).draggable();
 
-		$( "#sortable1, #sortable2" ).sortable({
-      connectWith: ".connectedSortable"
-    }).disableSelection();
+	$( "#sortable1, #sortable2" ).sortable({
+    connectWith: ".connectedSortable"
+  }).disableSelection();
 
-		$( ".equipo1, .equipo2" ).droppable({
-			cursor: "move",
-			drop: function( event, ui ) {
-			setTimeout(function(){
-				renderJugadoresEnCancha();
-			}, 50);
-			//Uso este delay porque hay problemas con
-			//el drop sino, no me toma el texto en el primer elemento agregado
-			},
-			remove : function( event, ui ){
-			console.log("algo se removio");
-			setTimeout(function(){
-				renderJugadoresEnCancha();
-			}, 50);
-			}
-		});
+	$( ".equipo1, .equipo2" ).droppable({
+		cursor: "move",
+		drop: function( event, ui ) {
+		setTimeout(function(){
+			renderJugadoresEnCancha();
+		}, 50);
+		//Uso este delay porque hay problemas con
+		//el drop sino, no me toma el texto en el primer elemento agregado
+		},
+		remove : function( event, ui ){
+		console.log("algo se removio");
+		setTimeout(function(){
+			renderJugadoresEnCancha();
+		}, 50);
+		}
+	});
 
-	}
+}
 
 	function habilidadDeJugador(jugador){
 		var arrayHabilidades = Object.keys( jugador.habilidades ).map(function ( key ) { return jugador.habilidades[key]; });

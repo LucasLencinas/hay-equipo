@@ -223,7 +223,7 @@ ul.alert-dropdown {
 }
 
 .panel-yellow > a:hover {
-    color: #df8a13;
+  color: #df8a13;
 }
 
 /*
@@ -232,6 +232,44 @@ COminezo de lo mio
 
 #left-menu a {
     cursor: pointer;
+}
+
+
+#sortable1, #sortable2 {
+	border: 2px dashed blue;
+	border-radius: 8px;
+	min-height: 20px;
+	list-style-type: none;
+	margin: 0;
+	padding: 5px 0 0 0;
+	float: left;
+	margin-right: 10px;
+	width: 134px;
+}
+#sortable1 li, #sortable2 li {
+	border-radius: 8px;
+	border: 2px solid black;
+	margin: 0 5px 5px 5px;
+	padding: 5px;
+	font-size: 1.2em;
+	width: 120px;
+}
+#pos1, #pos2 {
+	border: 2px dashed blue;
+	border-radius: 8px;
+	min-height: 20px;
+	list-style-type: none;
+	margin: 0;
+	padding: 5px 0 0 0;
+	float: left;
+	margin-right: 10px;
+}
+#pos1 li, #pos2 li {
+	border-radius: 8px;
+	border: 2px solid black;
+	margin: 0 5px 5px 5px;
+	padding: 5px;
+	font-size: 1.2em;
 }
 
 
