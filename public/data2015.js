@@ -1,10 +1,5 @@
 var partidos = [
 	{
-		fecha: 20160107,
-		equipo1: ["Marian", "Colo", "Martin", "Alan", "Gaby"],
-		equipo2: ["Lucas","Jony","Gorra","Pablote","Agus O"],
-		diferenciaGoles: 2
-	},{
 		fecha: 20150108, 
 		equipo1: ['Marian', 'Alan', 'Mati', 'Agus O', 'Manu'], 
 		equipo2: ['Jony', 'Lucas', 'Colo', 'Gorra', 'Martin'], 
